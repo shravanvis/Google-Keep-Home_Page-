@@ -1,0 +1,40 @@
+<p>
+  notes works!
+</p>
+
+<!-- <button (click)="isTrue = !isTrue">Toggle</button>
+<p *ngIf = "isTrue">The condition is true</p>
+<input *ngIf="isTrue" class="form-control" placeholder="New Text" type="text"> -->
+  <!-- <form>
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="title">
+          <textarea class="form-control" name="" id="" cols="30" rows="2" placeholder="input area" style="resize: none"></textarea>
+        </div>
+  </form> -->
+  <!-- <input *ngIf="isTrue" class="form-control" type="text" placeholder="Title"> -->
+  <!-- <input class="form-control" type="text" placeholder="Take a note..." (click)="isTrue = !isTrue"> -->
+  <!-- <textarea class="form-control" cols="30" rows="1" (click)="isTrue = !isTrue" placeholder="Take a note..." style="resize: none"></textarea> -->
+ 
+<div>
+<input *ngIf = "isTrue" class="form-control" type="text" placeholder="Title" [(ngModel)] = "condition1">
+<textarea class="form-control" cols="80" rows="1.5" (click) = "isTrue = !isTrue" placeholder="Take a note..." [(ngModel)] = "condition">
+  <button>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+      <path d="M0 0h24v24H0z" fill="none"/>
+     </svg>
+  </button>
+</textarea>
+</div>
+<br>
+<!-- <div class="card">
+    <div class="card-body">
+      <p>{{condition1}}</p>
+      <p> {{condition}} </p>
+    </div>
+  </div> -->
+
+  <div class="card" style="width: 18em">
+   <p class="card-text">{{condition1}}</p>
+   <p class="card-text">{{condition}}</p>
+  </div>

@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+    imgUrl = "../../assets/intro-bg.jpg";
+    imgUrl1 = "https://phoenix-startup.com/img/bg/bg--waves.jpg";
+
+   
+
   constructor() { }
 
   ngOnInit() {

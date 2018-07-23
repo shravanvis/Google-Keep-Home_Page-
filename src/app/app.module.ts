@@ -8,13 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotesComponent } from './dashboard/Notes/notes.component';
+
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'dash', component: DashboardComponent}
+  {path: 'dash', component: DashboardComponent},
+  // {path: 'note', component: NotesComponent }
+
   
 ]
 @NgModule({
@@ -23,9 +27,9 @@ const appRoutes: Routes = [
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    DashboardComponent
-
-  ],  
+    DashboardComponent,
+    NotesComponent
+                  ],  
   imports: [
     BrowserModule,
     FormsModule,

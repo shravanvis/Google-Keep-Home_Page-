@@ -1,0 +1,8 @@
+textarea {
+    resize: none;
+    scroll-behavior: none;    
+} 
+
+.card{
+    width: 300px
+}
