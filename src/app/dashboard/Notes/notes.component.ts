@@ -14,6 +14,10 @@ export class NotesComponent implements OnInit {
   condition;
   condition1;
 
+  print(e){
+    console.log(e)
+  }
+
   constructor() { }
 
   ngOnInit() {

@@ -6,20 +6,36 @@
    <div class="row justify-content-center">
     <div class="col-sm-5">
       <div class="container mt-4">
-        <form>
+        <form #signupForm = "ngForm">
           <div class="form-group">
-           <label for="exampleName1">Name</label>
-            <input type="name" class="form-control" id="exampleName1" placeholder="Enter Name">
-         </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1"  placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+           <label>Name</label>
+            <input type="name" class="form-control" placeholder="Enter Name" name="name" #name="ngModel" ngModel required minlength="8">
+            <div *ngIf="name.errors">
+              <small *ngIf="name.errors.required">Name is required.</small>
             </div>
+
+            <small *ngIf="name.errors.minlength && name.dirty" class="text-info">
+              {{name.errors.minlength.requiredlength - name.errors.minlength.actualLength}}more characters required.
+            </small>
+
+          </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label>Email address</label>
+              <input type="email" class="form-control" placeholder="Enter email" name="email" #email="ngModel" ngModel required>
+                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+              <div *ngIf = "email.errors">
+                <small *ngIf = "email.errors.required && email.touched" class="text-danger">Email is required</small>
+              </div>
+              </div>
+            <!-- <pre>
+              {{email.errors | json}}
+            </pre> -->
+
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password" name="password" ngModel>
             </div>
+
           <div class="container">
             <button type="submit" class="btn btn-outline-primary">Sign Up</button> &nbsp;
             <button type="submit" class="btn btn-outline-success" routerLink = "/login">Click here to Log In</button>
